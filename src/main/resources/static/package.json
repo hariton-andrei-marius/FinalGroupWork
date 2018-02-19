@@ -1,0 +1,12 @@
+{
+    "name": "WeatherApp",
+    "version": "0.1.0",
+    "description": "Template for WeatherApp",
+    "license": "GPL-3.0-only",
+    "devDependencies": {
+        "grunt": "latest",
+        "grunt-contrib-sass": "latest",
+        "grunt-contrib-watch": "latest",
+        "jslint": "latest"
+    }
+}
