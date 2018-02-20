@@ -37,9 +37,10 @@ public class IndexController {
 			weather = e.getMessage();
 			forecast = e.getMessage();
 		}
-		
-		model.addAttribute("weather", weather);
+
 		model.addAttribute("images", images);
+		model.addAttribute("weather", weather);
+		model.addAttribute("forecast", forecast);
     	
 		return "index";
 	}
