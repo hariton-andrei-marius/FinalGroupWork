@@ -23,9 +23,24 @@ public class RestApi
 		return new URI(
 				ApiConfiguration.getGlobalScheme(),
 				ApiConfiguration.getCityDetailsAuthority(),
-				ApiConfiguration.getCityDetailsPath(),
+				ApiConfiguration.getCityDetailsPathCities(),
 				ApiConfiguration.getCityDetailsQuery() + cityToSearch,
 				""
 		);
+	} 
+	
+	public static URI getImagesURI(String cityToSearch) throws URISyntaxException
+	{
+		return new URI(
+				ApiConfiguration.getGlobalScheme(),
+				ApiConfiguration.getCityDetailsAuthority(),
+				ApiConfiguration.getCityDetailsPathImages()
+				+cityToSearch+ApiConfiguration.getCityDetailsImageUrl(),
+				"",
+				""
+		);
 	}
+	
+	
 }
+
