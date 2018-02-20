@@ -23,7 +23,7 @@ public class WeatherRestController {
 		
 		try
 		{
-			results = new RestTemplate().getForObject(RestApi.getWeatherURI(city), Object.class);
+			results = new RestTemplate().getForObject(RestApi.getWeatherURIbyCity(city), Object.class);
 		}
 		catch (RestClientException | URISyntaxException e)
 		{

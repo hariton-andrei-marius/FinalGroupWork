@@ -1,6 +1,8 @@
 package start.controllers;
 
 import java.net.URISyntaxException;
+import java.sql.Timestamp;
+import java.util.Date;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,25 +20,34 @@ public class IndexController {
 	@RequestMapping("/index")
 	public String weather(Model model,
 
-		@RequestParam(value = "city", required = false, defaultValue = "bologna") String city)
+		@RequestParam(value = "city", required = false, defaultValue = "bologna") String city,
+		@RequestParam(value = "id", required = false, defaultValue = "3181928") int id)
 	{
-		Object weather = null , images = null;
+		Object images = null;
+		Object weather = null;
+		Object forecast = null;
 		
 		try
 		{
-			weather = new RestTemplate().getForObject(RestApi.getWeatherURI(city), Object.class);
-			images = new RestTemplate().getForObject(RestApi.getCityDetailsURI(city), Object.class);
-
+			images = new RestTemplate().getForObject(RestApi.getImagesURI(city), Object.class);
+			weather = new RestTemplate().getForObject(RestApi.getWeatherURIbyID(id), Object.class);
+			forecast = new RestTemplate().getForObject(RestApi.getForecastURIbyID(id), Object.class);
 		}
 		catch (RestClientException | URISyntaxException e)
 		{
-			weather = e.getMessage();
 			images = e.getMessage();
-
+			weather = e.getMessage();
+			forecast = e.getMessage();
 		}
+
+		// ---
+		Timestamp stamp = new Timestamp(System.currentTimeMillis()); // DA METTERE 'weather.dt'
+		Date date = new Date(stamp.getTime());
 		
-		model.addAttribute("weather", weather);
 		model.addAttribute("images", images);
+		model.addAttribute("weather", weather);
+		model.addAttribute("forecast", forecast);
+		model.addAttribute("date", date);
     	
 		return "index";
 	}
