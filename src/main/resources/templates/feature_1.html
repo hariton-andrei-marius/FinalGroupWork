@@ -2,7 +2,8 @@
 	<article class="container">
 		<i class="material-icons">brightness_low</i>
 		<span class="city"><h1 th:text="${weather.name}"></h1> </span>
-		<span><h2 th:text="${weather.weather[0].main}"><br />data</h2></span>
+		<span><h2 th:text="${weather.weather[0].main}"></h2></span>
+		<span><h2 th:text="${date}"></h2></span>
 		<span class="temp"><h1 th:text="${weather.main.temp}"></h1> </span>
 	</article>
 	<img class= "imageCity" th:src="${images.photos[0].image.mobile}" />

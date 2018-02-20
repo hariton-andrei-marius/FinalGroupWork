@@ -1,6 +1,8 @@
 package start.controllers;
 
 import java.net.URISyntaxException;
+import java.sql.Timestamp;
+import java.util.Date;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -38,9 +40,14 @@ public class IndexController {
 			forecast = e.getMessage();
 		}
 
+		// ---
+		Timestamp stamp = new Timestamp(System.currentTimeMillis()); // DA METTERE 'weather.dt'
+		Date date = new Date(stamp.getTime());
+		
 		model.addAttribute("images", images);
 		model.addAttribute("weather", weather);
 		model.addAttribute("forecast", forecast);
+		model.addAttribute("date", date);
     	
 		return "index";
 	}
