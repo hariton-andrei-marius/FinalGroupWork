@@ -1,11 +1,11 @@
 /*
-* THIS IS ANcore!
+* THIS IS AN
 * EXAMPLE CODE !
 */
 
 /* IMPORT */
 /*
-@import 'variables';berhahq
+@import 'variables';
 @import 'mixins';
 @import 'shared';
 */
@@ -24,14 +24,10 @@ body{
 .container{
 	width: 100%;
 	text-align: center;
-	height: 600px;
 	position: fixed;
 	z-index: 100;
 	color: #fff;
-	border-top: 10px;
 	display: flex;
-	align-content: center;
-	align-items: center;
 	flex-direction: column;
 
 }
@@ -44,12 +40,31 @@ body{
 		padding: 10px 10px;
 }
 
-
-.immagineCitta{
+.imageCity{
 	z-index: 1;
 	//opacity: 0.3;
 	//background-color: #000 ;
 }
+
+/*second block*/
+.succ_date{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.succ_date h2{
+	justify-content: center;
+}
+
+
+@media screen and (min-width: 375px){
+  .block1 {
+    display: flex;
+  }
+}
+
 
 /* MIXINS */
 /*
