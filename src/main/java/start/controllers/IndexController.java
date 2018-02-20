@@ -35,8 +35,8 @@ public class IndexController {
 
 		}
 		
-		model.addAttribute("results", weather);
-		model.addAttribute("results", images);
+		model.addAttribute("weather", weather);
+		model.addAttribute("images", images);
     	
 		return "index";
 	}
