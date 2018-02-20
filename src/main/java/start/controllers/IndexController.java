@@ -20,12 +20,13 @@ public class IndexController {
 
 		@RequestParam(value = "city", required = false, defaultValue = "bologna") String city)
 	{
-		Object weather = null , images = null;
+		Object weather = null;
+		Object images = null;
 		
 		try
 		{
 			weather = new RestTemplate().getForObject(RestApi.getWeatherURI(city), Object.class);
-			images = new RestTemplate().getForObject(RestApi.getCityDetailsURI(city), Object.class);
+			images = new RestTemplate().getForObject(RestApi.getImagesURI(city), Object.class);
 
 		}
 		catch (RestClientException | URISyntaxException e)
