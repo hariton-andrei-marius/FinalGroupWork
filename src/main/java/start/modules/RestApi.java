@@ -47,6 +47,7 @@ public class RestApi
 				ApiConfiguration.getGlobalScheme(),
 				ApiConfiguration.getWeatherAuthority(),
 				ApiConfiguration.getForecastPath(),
+				ApiConfiguration.getWeatherQuery() + cityToSearch,
 				""
 		);
 	}
