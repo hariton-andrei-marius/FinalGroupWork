@@ -3,34 +3,57 @@
 * EXAMPLE CODE !
 */
 /* IMPORT */
-/* VARIABLES */
-/* MIXINS */
-/* EXTEND/INHERITANCE */
-.success {
-  color: #333; }
-
+/*
+@import 'variables';
+@import 'mixins';
+@import 'shared';
+*/
+/*
 body {
-  font: 100% Helvetica, sans-serif;
-  color: #333; }
+	font: 100% $font-stack;
+	color: $primary-color;
+}*/
+body {
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 2px;
+  font-weight: 500; }
 
-/* NESTING */
-nav ul {
-  margin: 0; }
-nav li {
-  color: #333; }
-  nav li:hover {
-    color: #333; }
+.container {
+  width: 100%;
+  text-align: center;
+  height: 600px;
+  position: fixed;
+  z-index: 100;
+  color: #fff;
+  border-top: 10px;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  flex-direction: column; }
+
+.material-icons {
+  padding: 10px 10px; }
+
+.container span {
+  padding: 10px 10px; }
+
+.immagineCitta {
+  z-index: 1; }
 
 /* MIXINS */
+/*
 .box {
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  border-radius: 10px; }
-
+	@include border-radius(10px);
+}*/
 /* EXTEND/INHERITANCE */
+/*
+.success {
+	@extend %message-shared;
+}*/
 /* OPERATORS */
+/*
 aside[role='complementary'] {
-  width: 31.25%; }
+	width: 300px / 960px * 100%;
+}*/
 
 /*# sourceMappingURL=basic.css.map */

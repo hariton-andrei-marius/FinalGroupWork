@@ -6,55 +6,32 @@
 	<meta name="theme-color" content="#3F51B5" />
 	<meta name="description" content="Weather" />
 	<meta name="keywords" content="weather, cities" />
-	
+
+
 	<title>Weather</title>
-	
+
 	<!-- Stylesheets  -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 	<link rel="stylesheet" href="style/reset.css" />
 	<link rel="stylesheet" href="style/basic.css" />
 </head>
 <body>
-	<header class="head">
-		<nav class="navigation">
-			<a href="#">Weather</a>
-			<ul>
-				<li><a href="#">Link</a></li>
-			</ul>
-		</nav>
-	</header>
+	<!-- <header class="head">
+
+
+	</header>// -->
 
 	<main class="body">
 		<section class="container">
-			<article></article>
-			
-			<!-- ONLY FOR TEST -->
-			
-			<form action="/rest/weather" method="GET">
-				<h3>/rest/weather</h3>
-				<input type="text"  name="city" />
-				<input type="submit" value="Get JSON weather" />
-			</form>
-			
-			<form action="/rest/city_details" method="GET">
-				<h3>/rest/city_details</h3>
-				<input type="text" name="city" />
-				<input type="submit" value="Get JSON data" />
-			</form>
-			
-			<form action="/weather" method="GET">
-				<h3>/weather</h3>
-				<input type="text" name="city" />
-				<input type="submit" value="Get weather" />
-			</form>
-			
-			<form action="/city_details" method="GET">
-				<h3>/city_details</h3>
-				<input type="text" name="city" />
-				<input type="submit" value="Get data" />
-			</form>
+				<i class="material-icons">brightness_low</i>
+				<span class="citta"> <h1> NOME CITTA' </h1> </span>
+				<span>	<h2> Condizioni meteo <br> data </h2> </span>
+				<span class="temp"> <h1> 22° </h1> </span>
 		</section>
+		<img class= "immagineCitta" src="http://via.placeholder.com/400x600"> </img>
 	</main>
-
+  
 	<footer class="foot">
 		<section class="container">
 			<article>
