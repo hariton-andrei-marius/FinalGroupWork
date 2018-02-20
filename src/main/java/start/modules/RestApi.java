@@ -7,13 +7,24 @@ import start.services.ApiConfiguration;
 
 public class RestApi
 {
-	public static URI getWeatherURI(String cityToSearch) throws URISyntaxException
+	public static URI getWeatherURIbyCity(String cityToSearch) throws URISyntaxException
 	{
 		return new URI(
 				ApiConfiguration.getGlobalScheme(),
 				ApiConfiguration.getWeatherAuthority(),
 				ApiConfiguration.getWeatherPath(),
-				ApiConfiguration.getWeatherQuery() + cityToSearch,
+				ApiConfiguration.getWeatherQueryByCity() + cityToSearch,
+				""
+		);
+	}
+	
+	public static URI getWeatherURIbyID(int cityID) throws URISyntaxException
+	{
+		return new URI(
+				ApiConfiguration.getGlobalScheme(),
+				ApiConfiguration.getWeatherAuthority(),
+				ApiConfiguration.getWeatherPath(),
+				ApiConfiguration.getWeatherQueryByID() + cityID,
 				""
 		);
 	}
@@ -41,17 +52,26 @@ public class RestApi
 		);
 	}
 	
-	public static URI getForecastURI(String cityToSearch) throws URISyntaxException
+	public static URI getForecastURIbyCity(String cityToSearch) throws URISyntaxException
 	{
 		return new URI(
 				ApiConfiguration.getGlobalScheme(),
 				ApiConfiguration.getWeatherAuthority(),
 				ApiConfiguration.getForecastPath(),
-				ApiConfiguration.getWeatherQuery() + cityToSearch,
+				ApiConfiguration.getWeatherQueryByCity() + cityToSearch,
 				""
 		);
 	}
 	
-	
+	public static URI getForecastURIbyID(int cityID) throws URISyntaxException
+	{
+		return new URI(
+				ApiConfiguration.getGlobalScheme(),
+				ApiConfiguration.getWeatherAuthority(),
+				ApiConfiguration.getForecastPath(),
+				ApiConfiguration.getWeatherQueryByID() + cityID,
+				""
+		);
+	}
 }
 

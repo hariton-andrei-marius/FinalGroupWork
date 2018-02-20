@@ -15,7 +15,7 @@ public class RestApiTest
 	{
 		try
 		{
-			assert(RestApi.getWeatherURI("bologna").toString().length() == 13);
+			assert(RestApi.getWeatherURIbyCity("bologna").toString().length() == 13);
 		}
 		catch (URISyntaxException e)
 		{
