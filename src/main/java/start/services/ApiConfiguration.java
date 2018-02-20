@@ -16,8 +16,9 @@ public class ApiConfiguration {
     private static String globalScheme, 
     	weatherAppID,weatherAuthority, weatherPath, weatherQuery,
     	cityDetailsAuthority, cityDetailsPathCities, cityDetailsQuery, 
-    	cityDetailsImageUrl, cityDetailsPathImages;
-
+    	cityDetailsImageUrl, cityDetailsPathImages,
+    	forecastPath;
+    
 	public static String getGlobalScheme() {
 		return globalScheme;
 	}
@@ -96,6 +97,14 @@ public class ApiConfiguration {
 
 	public static void setCityDetailsPathImages(String cityDetailsPathImages) {
 		ApiConfiguration.cityDetailsPathImages = cityDetailsPathImages;
+	}
+	
+	public static String getForecastPath() {
+		return forecastPath;
+	}
+
+	public static void setForecastPath(String forecastPath) {
+		ApiConfiguration.forecastPath = forecastPath;
 	}
 
   
