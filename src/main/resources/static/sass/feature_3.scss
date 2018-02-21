@@ -1,0 +1,35 @@
+.block3{
+	padding: 15px;
+	display: flex;
+	justify-content: space-around;
+	color: gray;
+	background-color:  #fafafa;
+	width: 100%;
+	position: fixed;
+	bottom: 0px;
+}
+
+
+.input{
+	width: 100%;
+	padding: 10px 20px;
+	border-right: 0px;
+	border-left: 1px solid gray;
+	border-top: 1px solid gray;
+	border-bottom: 1px solid gray;
+	border-radius: 2px;
+}
+
+.mic{
+	width: auto;
+	border-left: 0px;
+	border-right: 1px solid gray;
+	border-top: 1px solid gray;
+	border-bottom: 1px solid gray;
+	border-radius: 2px;
+}
+
+.mic:hover{
+	background-color: rgb(198, 185, 190);
+	opacity: 0.7;
+}

@@ -1,0 +1,33 @@
+.container{
+	width: 100%;
+	text-align: center;
+	position: absolute;
+	z-index: 100;
+	color: #fff;
+	display: flex;
+	flex-direction: column;
+	padding: 130px 100px;
+
+  span {
+    padding: 10px 10px;
+  }
+
+	.material-icons {
+		font-size: 70px;
+	}
+
+}
+
+.imageCity{
+	position: relative;
+	width: 100%;
+	z-index: 1;
+}
+
+.city{
+	font-size: 40px;
+}
+
+.temp{
+	font-size: 70px;
+}
