@@ -26,11 +26,17 @@
 }
 
 .city{
-	font-size: 40px;
+	font-size: 50px;
+	margin: 10px;
 }
 
 .temp{
 	font-size: 70px;
+}
+
+.description {
+	font-weight: bold;
+	margin: 10px;
 }
 
 /*sole: 01d 											content: "\f185";
@@ -44,7 +50,7 @@ neve: 13d												content: "\f2dc";
 mist: 50d												content: "\f1be";*/
 
 
-// TOP ICONS 
+// TOP ICONS
 .icon-01d:before , .icon-01n:before  {
 	font: normal normal normal 100px FontAwesome;
 	content: "\f185";

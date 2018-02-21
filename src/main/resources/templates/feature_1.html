@@ -2,7 +2,8 @@
 	<article class="container">
 		<i th:attr="class='icon-'+${weather.weather[0].icon}"></i>
 		<h1 th:text="${weather.name}" class="city"></h1>
-		<h2 th:text="${weather.weather[0].description}"><br /></h2>
+		<h2 th:text="${weather.weather[0].description}" class="description"><br /></h2>
+		<h2 th:text="${date}"><br /></h2>
 		<h1 th:text="${weather.main.temp}+'°'" class="temp"></h1>
 	</article>
 	 <img class= "imageCity" th:data-mobile="${images.photos[0].image.mobile}"  th:data-web="${images.photos[0].image.web}"/>

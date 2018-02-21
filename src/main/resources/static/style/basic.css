@@ -34,10 +34,15 @@ body {
   z-index: 1; }
 
 .city {
-  font-size: 40px; }
+  font-size: 50px;
+  margin: 10px; }
 
 .temp {
   font-size: 70px; }
+
+.description {
+  font-weight: bold;
+  margin: 10px; }
 
 /*sole: 01d 											content: "\f185";
 sole-nuvola: 02d 								content: "\f0c2"; chiaro

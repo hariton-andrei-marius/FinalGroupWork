@@ -1,24 +1,29 @@
 var retrievImage = (function () {
 
   /* DECLARING VARIABLES */
-  var $citySearched, $imageCity;
+  var $citySearched, $imageCity, $imageWeb, $imageMobile, $window;
 
   var RESTURL = "/rest/images";
   /* CACHING VARIABLES */
   function _setup() {
     $citySearched = $(".city").find($("h1"));
     $imageCity = $(".imageCity");
+    $window = $( window );
   };
 
    /* PRIVATE BUSINESS FUNCTIONS */
 
    var stampImage = function(data){
-     if($( window ).width() < 768){
-     $imageCity.attr("src",data.photos[0].image.mobile);
-     console.log(data.photos[0].image.mobile);
+     $imageMobile = data.photos[0].image.mobile;
+     $imageWeb = data.photos[0].image.web;
+     restartImage();
+   }
+
+   var restartImage = function (){
+     if($window.width() < 1000){
+     $imageCity.attr("src",$imageMobile);
       } else {
-     $imageCity.attr("src",data.photos[0].image.web);
-     console.log(data.photos[0].image.web);
+     $imageCity.attr("src",$imageWeb);
     }
    }
 
@@ -41,8 +46,9 @@ var retrievImage = (function () {
 
    /* DECLARING EVENT HANDLER */
   function _setObserver() {
-    $( document ).ready(function() {
-      _getImageData($imageCity);
+    _getImageData($imageCity);
+    $window.on("resize",function() {
+      restartImage();
     });
   };
 
