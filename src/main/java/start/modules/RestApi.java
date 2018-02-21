@@ -35,7 +35,7 @@ public class RestApi
 				ApiConfiguration.getGlobalScheme(),
 				ApiConfiguration.getCityDetailsAuthority(),
 				ApiConfiguration.getCityDetailsPathCities(),
-				ApiConfiguration.getCityDetailsQuery() + cityToSearch,
+				ApiConfiguration.getCityDetailsQuery() + cityToSearch  + "&limit=10",
 				""
 		);
 	}
@@ -58,7 +58,7 @@ public class RestApi
 				ApiConfiguration.getGlobalScheme(),
 				ApiConfiguration.getWeatherAuthority(),
 				ApiConfiguration.getForecastPath(),
-				ApiConfiguration.getWeatherQueryByCity() + cityToSearch,
+				ApiConfiguration.getWeatherQueryByCity() + cityToSearch ,
 				""
 		);
 	}

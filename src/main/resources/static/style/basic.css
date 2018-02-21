@@ -13,25 +13,22 @@ body {
 	font: 100% $font-stack;
 	color: $primary-color;
 }*/
-body {
-  font-family: 'Montserrat', sans-serif;
-  letter-spacing: 2px;
-  font-weight: 500; }
-
-/*first block*/
 .container {
   width: 100%;
   text-align: center;
   position: absolute;
-  z-index: 100;
   color: #fff;
   display: flex;
   flex-direction: column;
   padding: 130px 100px; }
+  .container span {
+    padding: 10px 10px; }
+  .container .material-icons {
+    font-size: 70px; }
 
-/*****Font size city today********/
-.container .material-icons {
-  font-size: 70px; }
+.imageCity {
+  position: relative;
+  width: 100%; }
 
 .city {
   font-size: 40px; }
@@ -39,24 +36,6 @@ body {
 .temp {
   font-size: 70px; }
 
-/********************************************/
-.material-icons {
-  padding: 10px 10px; }
-
-.container span {
-  padding: 10px 10px; }
-
-.imageCity {
-  position: relative;
-  width: 100%;
-  z-index: 1; }
-
-/*
-.overlay{
-	//opacity: 0.3;
-	//background-color: #000 ;
-}*/
-/*second block*/
 .block2 {
   background-color: #fafafa; }
 
@@ -76,18 +55,23 @@ body {
   display: flex;
   vertical-align: middle; }
 
-/*last block*/
 .block3 {
-  padding: 15px;
-  display: flex;
-  justify-content: space-around;
+  position: fixed;
+  bottom: 0px;
   color: gray;
   background-color: #fafafa;
+  width: 100%; }
+
+.blockIn {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   width: 100%;
-  position: fixed;
-  bottom: 0px; }
+  position: relative;
+  padding: 15px; }
 
 .input {
+  height: 46px;
   width: 100%;
   padding: 10px 20px;
   border-right: 0px;
@@ -104,11 +88,24 @@ body {
   border-bottom: 1px solid gray;
   border-radius: 2px; }
 
-.mic:hover {
-  background-color: #c6b9be;
-  opacity: 0.7; }
+.listaCitta {
+  position: absolute;
+  bottom: 100%;
+  background-color: #e8e8e8;
+  padding-left: 36px;
+  padding-top: 15px;
+  width: 100%; }
+  .listaCitta li {
+    padding-bottom: 15px; }
 
-/****************/
+body {
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 2px;
+  font-weight: 500; }
+
+.material-icons {
+  padding: 10px 10px; }
+
 @media screen and (min-width: 375px) {
   .block1 {
     display: flex; } }
