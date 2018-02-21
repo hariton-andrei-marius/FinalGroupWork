@@ -1,7 +1,7 @@
 var getInput= (function () {
 
   /* DECLARING VARIABLES */
-  var $input, $listaCitta, $nomiCitta;
+  var $input, $listaCitta, $nomiCitta, $form;
   var RESTURL = "/rest/city_details";
   var RESTINDEX ="/index";
 
@@ -12,6 +12,7 @@ var getInput= (function () {
     $input = $(".input");
     $listaCitta = $(".listaCitta");
     $nomiCitta = $(".nomiCitta");
+    $form = $(".blockIn");
     };
 
    /* PRIVATE BUSINESS FUNCTIONS */
@@ -71,9 +72,18 @@ var getInput= (function () {
     });
   }
 
+/*****SUBMIT ALCLICK DEL LI NON FUNZIONANTE -> DA SISTEMARE
+  var _submit = function(e){
+    $form.submit(function(){
+    $input.val() = $(this);
+    console.log("prova");
+    });
+    _bloccoInvio(e);
+  }
+
   var _bloccoInvio = function(e){
       e.preventDefault();
-  }
+  }*/
 
   /* END PRIVATE BUSINESS FUNCTIONS */
 
@@ -85,15 +95,15 @@ var getInput= (function () {
       _controlloCaratteri();
     });
 
-    $listaCitta.on("click",  "li", function(e){
+    $listaCitta.on("click",  "li", function(){
         _ajaxCall_id($(this).data("url"));
-         $input.submit(function(){
-           debugger;
-          console.log("prova");
-         });
-        _bloccoInvio(e);
+        console.log("prova click");
+      //  _submit(e);
     });
 
+    $('#idForm').on('keypress',function(e){
+      return e.which !== 13;
+    });
 
   };
 
