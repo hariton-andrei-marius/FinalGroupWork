@@ -24,7 +24,7 @@ public class ForecastRestController {
 		
 		try
 		{
-			results = new RestTemplate().getForObject(RestApi.getForecastURI(city), Object.class);
+			results = new RestTemplate().getForObject(RestApi.getForecastURIbyCity(city), Object.class);
 		}
 		catch (RestClientException | URISyntaxException e)
 		{
