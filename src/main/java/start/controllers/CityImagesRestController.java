@@ -18,7 +18,7 @@ public class CityImagesRestController {
 	@RequestMapping("/rest/images")
 	public Object weather(Model model,
 
-		@RequestParam(value = "city", required = false, defaultValue = "bologna") String city)
+		@RequestParam(value = "city", required = false) String city)
 	{
 		Object results = null;
 		

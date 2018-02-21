@@ -21,6 +21,7 @@
 .imageCity{
 	position: relative;
 	width: 100%;
+	height:70vh;
 	z-index: 1;
 }
 
@@ -30,4 +31,65 @@
 
 .temp{
 	font-size: 70px;
+}
+
+/*sole: 01d 											content: "\f185";
+sole-nuvola: 02d 								content: "\f0c2"; chiaro
+nuvola: 03d 										content: "\f0c2"; chiaro
+nuvole-scure: 04d								content: "\f0c2"; scuro
+nuvole-con-pioggia:  09d				content: "\f043"; +++ 		content: "\f0c2";
+nuvole-con-sole-con-pioggia: 10d	content: "\f185"; +++		content: "\f043";
+nuvole-fulmini: 11d							content: "\f0e7";
+neve: 13d												content: "\f2dc";
+mist: 50d												content: "\f1be";*/
+
+
+// TOP ICONS 
+.icon-01d:before , .icon-01n:before  {
+	font: normal normal normal 100px FontAwesome;
+	content: "\f185";
+}
+
+.icon-02d:before ,.icon-02n:before  {
+	font: normal normal normal 100px FontAwesome;
+	content: "\f0c2";
+}
+
+.icon-03d:before , .icon-03n:before   {
+	font: normal normal normal 100px FontAwesome;
+	content: "\f0c2";
+}
+
+.icon-04d:before , .icon-04n:before  {
+	font: normal normal normal 100px FontAwesome;
+	content: "\f0c2";
+}
+
+.icon-09n , .icon-09d {
+	&:before  {
+		font: normal normal normal 100px FontAwesome;
+		content: "\f043";
+	}
+}
+
+.icon-10n , .icon-01d {
+	&:after  {
+		font: normal normal normal 100px FontAwesome;
+		content: "\f043";
+	}
+}
+
+.icon-11d:before, .icon-11n:before  {
+	font: normal normal normal 100px FontAwesome;
+	content: "\f0e7";
+}
+
+.icon-13d:before ,.icon-13n:before  {
+	font: normal normal normal 100px FontAwesome;
+	content: "\f2dc";
+}
+
+.icon-50d:before , .icon-50n:before {
+	font: normal normal normal 100px FontAwesome;
+	content: "\f1be";
 }

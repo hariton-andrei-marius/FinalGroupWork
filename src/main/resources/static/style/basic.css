@@ -13,12 +13,6 @@ body {
 	font: 100% $font-stack;
 	color: $primary-color;
 }*/
-body {
-  font-family: 'Montserrat', sans-serif;
-  letter-spacing: 2px;
-  font-weight: 500; }
-
-/*first block*/
 .container {
   width: 100%;
   text-align: center;
@@ -28,10 +22,16 @@ body {
   display: flex;
   flex-direction: column;
   padding: 130px 100px; }
+  .container span {
+    padding: 10px 10px; }
+  .container .material-icons {
+    font-size: 70px; }
 
-/*****Font size city today********/
-.container .material-icons {
-  font-size: 70px; }
+.imageCity {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  z-index: 1; }
 
 .city {
   font-size: 40px; }
@@ -39,24 +39,51 @@ body {
 .temp {
   font-size: 70px; }
 
-/********************************************/
-.material-icons {
-  padding: 10px 10px; }
+/*sole: 01d 											content: "\f185";
+sole-nuvola: 02d 								content: "\f0c2"; chiaro
+nuvola: 03d 										content: "\f0c2"; chiaro
+nuvole-scure: 04d								content: "\f0c2"; scuro
+nuvole-con-pioggia:  09d				content: "\f043"; +++ 		content: "\f0c2";
+nuvole-con-sole-con-pioggia: 10d	content: "\f185"; +++		content: "\f043";
+nuvole-fulmini: 11d							content: "\f0e7";
+neve: 13d												content: "\f2dc";
+mist: 50d												content: "\f1be";*/
+.icon-01d:before, .icon-01n:before {
+  font: normal normal normal 100px FontAwesome;
+  content: "\f185"; }
 
-.container span {
-  padding: 10px 10px; }
+.icon-02d:before, .icon-02n:before {
+  font: normal normal normal 100px FontAwesome;
+  content: "\f0c2"; }
 
-.imageCity {
-  position: relative;
-  width: 100%;
-  z-index: 1; }
+.icon-03d:before, .icon-03n:before {
+  font: normal normal normal 100px FontAwesome;
+  content: "\f0c2"; }
 
-/*
-.overlay{
-	//opacity: 0.3;
-	//background-color: #000 ;
-}*/
-/*second block*/
+.icon-04d:before, .icon-04n:before {
+  font: normal normal normal 100px FontAwesome;
+  content: "\f0c2"; }
+
+.icon-09n:before, .icon-09d:before {
+  font: normal normal normal 100px FontAwesome;
+  content: "\f043"; }
+
+.icon-10n:after, .icon-01d:after {
+  font: normal normal normal 100px FontAwesome;
+  content: "\f043"; }
+
+.icon-11d:before, .icon-11n:before {
+  font: normal normal normal 100px FontAwesome;
+  content: "\f0e7"; }
+
+.icon-13d:before, .icon-13n:before {
+  font: normal normal normal 100px FontAwesome;
+  content: "\f2dc"; }
+
+.icon-50d:before, .icon-50n:before {
+  font: normal normal normal 100px FontAwesome;
+  content: "\f1be"; }
+
 .block2 {
   background-color: #fafafa; }
 
@@ -76,7 +103,6 @@ body {
   display: flex;
   vertical-align: middle; }
 
-/*last block*/
 .block3 {
   padding: 15px;
   display: flex;
@@ -108,7 +134,14 @@ body {
   background-color: #c6b9be;
   opacity: 0.7; }
 
-/****************/
+body {
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 2px;
+  font-weight: 500; }
+
+.material-icons {
+  padding: 10px 10px; }
+
 @media screen and (min-width: 375px) {
   .block1 {
     display: flex; } }
