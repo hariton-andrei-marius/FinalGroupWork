@@ -8,7 +8,7 @@ import java.net.URL;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
-import start.Position;
+import start.classes.Position;
 
 public class Utils
 {

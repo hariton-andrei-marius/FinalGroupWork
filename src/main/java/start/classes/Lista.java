@@ -3,14 +3,14 @@ package start.classes;
 public class Lista {
 	
 	private Main_det main;
-	private Weather [] weather;
+	private ForecastWeather [] weather;
 	private String dt_txt;
 	
 	public Main_det getMain() {
 		return main;
 	}
 	
-	public Weather[] getWeather() {
+	public ForecastWeather[] getWeather() {
 		return weather;
 	}
 	
