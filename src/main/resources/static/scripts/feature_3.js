@@ -3,7 +3,6 @@ var getInput= (function () {
   /* DECLARING VARIABLES */
   var $input, $listaCitta, $nomiCitta, $form;
   var RESTURL = "/rest/city_details";
-  var RESTINDEX ="/index";
 
 
 
@@ -58,32 +57,17 @@ var getInput= (function () {
       cache:false,
       success: function(data){
         var geoname = data.geoname_id;
-        $.ajax({
-          url:RESTINDEX,
-          type:"GET",
-          dataType:'json',
-          cache:false,
-          data: {id: geoname},
-          success: function(data){
-
-          }
-        });
+        _funcSubmit(geoname);
       }
     });
   }
 
-/*****SUBMIT ALCLICK DEL LI NON FUNZIONANTE -> DA SISTEMARE
-  var _submit = function(e){
-    $form.submit(function(){
-    $input.val() = $(this);
-    console.log("prova");
-    });
-    _bloccoInvio(e);
+  var _funcSubmit = function(geoname){
+    debugger;
+    $('.insert').val(geoname);
+    $('#idForm').submit();
   }
 
-  var _bloccoInvio = function(e){
-      e.preventDefault();
-  }*/
 
   /* END PRIVATE BUSINESS FUNCTIONS */
 
@@ -95,10 +79,8 @@ var getInput= (function () {
       _controlloCaratteri();
     });
 
-    $listaCitta.on("click",  "li", function(){
-        _ajaxCall_id($(this).data("url"));
-        console.log("prova click");
-      //  _submit(e);
+    $listaCitta.on("click", "li", function(e){
+      _ajaxCall_id($(this).data("url"));
     });
 
     $('#idForm').on('keypress',function(e){
