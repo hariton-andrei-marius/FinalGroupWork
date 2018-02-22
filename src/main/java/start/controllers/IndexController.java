@@ -1,8 +1,7 @@
 package start.controllers;
 
 import java.net.URISyntaxException;
-import java.sql.Timestamp;
-//import java.util.Calendar;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.springframework.stereotype.Controller;
@@ -12,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
+import start.Weather;
 import start.modules.RestApi;
 import start.modules.Utils;
 
@@ -22,26 +22,15 @@ public class IndexController {
 	@RequestMapping("/index")
 	public String weather(Model model,
 
-		@RequestParam(value = "city", required = false, defaultValue = "bologna") String city,
+		@RequestParam(value = "city", required = false, defaultValue = "Bologna") String city,
 		@RequestParam(value = "id", required = false, defaultValue = "3181928") int id) throws RestClientException, URISyntaxException, Exception
 	{
-		Object weather = null;
-		
-		try
-		{
-			weather = new RestTemplate().getForObject(RestApi.getWeatherURIbyID(id), Object.class);
-		}
-		catch (RestClientException | URISyntaxException e)
-		{
-			weather = e.getMessage();
-		}
-
-		// ---
-		Timestamp stamp = new Timestamp(System.currentTimeMillis()); // DA METTERE 'weather.dt'
-		Date date = new Date(stamp.getTime());
+		Weather weather = new RestTemplate().getForObject(RestApi.getWeatherURIbyID(id), Weather.class);
+		SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.mmm'Z'");
+		f.parse(Integer.toString( weather.getDt() ));
 		
 		model.addAttribute("weather", weather);
-		model.addAttribute("date", date);
+		model.addAttribute("date", f.toString());
 		model.addAttribute("position", Utils.getPosition());
     	
 		return "index";

@@ -33,6 +33,7 @@ $input_text_darker: rgb(96, 96, 96);
 }
 
 .mic{
+	height: 46px;
 	width: auto;
 	border-left: 0px;
 	border-right: 1px solid gray;
@@ -49,12 +50,10 @@ $input_text_darker: rgb(96, 96, 96);
 	position: absolute;
 	bottom:100%;
 	background-color: $input_background;
-	padding-left:36px;
-	padding-top: 15px;
 	width: 100%;
 
 	li{
-		padding-bottom: 15px;
+		padding: 10px;
 
 		&:hover {
 			color: $input_text_darker;
