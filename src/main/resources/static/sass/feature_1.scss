@@ -6,7 +6,11 @@
 	color: #fff;
 	display: flex;
 	flex-direction: column;
-	padding: 130px 100px;
+	padding-top: 100px;
+
+	.position {
+		margin-bottom: 20px;
+	}
 
   span {
     padding: 10px 10px;
@@ -15,20 +19,35 @@
 	.material-icons {
 		font-size: 70px;
 	}
+}
 
+/* IMAGE WITH OVERLAY */
+
+.imageContainer {
+	position: relative;
 }
 
 .imageCity{
 	position: relative;
 	width: 100%;
-	height:70vh;
-	z-index: -1;
+	height: 70vh;
+	z-index: -2;
 	object-fit: cover;
+}
+
+.imageOverlay {
+  background: rgba(0, 0, 0, 0.2);
+  width: 100%;
+  height: 99.7%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 
 .city{
 	font-size: 50px;
-	margin: 10px;
+	margin-top: 10px;
 }
 
 .temp{
@@ -37,10 +56,12 @@
 
 .description {
 	font-weight: bold;
-	margin: 10px;
+	margin: 10px 0 10px 0;
 }
 
-/*sole: 01d 											content: "\f185";
+/*
+
+sole: 01d 											content: "\f185";
 sole-nuvola: 02d 								content: "\f0c2"; chiaro
 nuvola: 03d 										content: "\f0c2"; chiaro
 nuvole-scure: 04d								content: "\f0c2"; scuro
@@ -48,8 +69,9 @@ nuvole-con-pioggia:  09d				content: "\f043"; +++ 		content: "\f0c2";
 nuvole-con-sole-con-pioggia: 10d	content: "\f185"; +++		content: "\f043";
 nuvole-fulmini: 11d							content: "\f0e7";
 neve: 13d												content: "\f2dc";
-mist: 50d												content: "\f1be";*/
+mist: 50d												content: "\f1be";
 
+*/
 
 // TOP ICONS
 .icon-01d:before , .icon-01n:before  {

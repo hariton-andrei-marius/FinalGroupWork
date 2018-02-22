@@ -10,7 +10,7 @@ public class RestApi
 	public static URI getWeatherURIbyCity(String cityToSearch) throws URISyntaxException
 	{
 		return new URI(
-				ApiConfiguration.getGlobalScheme(),
+				"https",
 				ApiConfiguration.getWeatherAuthority(),
 				ApiConfiguration.getWeatherPath(),
 				ApiConfiguration.getWeatherQueryByCity() + cityToSearch,
@@ -21,7 +21,7 @@ public class RestApi
 	public static URI getWeatherURIbyID(int cityID) throws URISyntaxException
 	{
 		return new URI(
-				ApiConfiguration.getGlobalScheme(),
+				"https",
 				ApiConfiguration.getWeatherAuthority(),
 				ApiConfiguration.getWeatherPath(),
 				ApiConfiguration.getWeatherQueryByID() + cityID,
@@ -32,7 +32,7 @@ public class RestApi
 	public static URI getCityDetailsURI(String cityToSearch) throws URISyntaxException
 	{
 		return new URI(
-				ApiConfiguration.getGlobalScheme(),
+				"https",
 				ApiConfiguration.getCityDetailsAuthority(),
 				ApiConfiguration.getCityDetailsPathCities(),
 				ApiConfiguration.getCityDetailsQuery() + cityToSearch  + "&limit=10",
@@ -43,7 +43,7 @@ public class RestApi
 	public static URI getImagesURI(String cityToSearch) throws URISyntaxException
 	{
 		return new URI(
-				ApiConfiguration.getGlobalScheme(),
+				"https",
 				ApiConfiguration.getCityDetailsAuthority(),
 				ApiConfiguration.getCityDetailsPathImages()
 				+cityToSearch+ApiConfiguration.getCityDetailsImageUrl(),
@@ -55,7 +55,7 @@ public class RestApi
 	public static URI getForecastURIbyCity(String cityToSearch) throws URISyntaxException
 	{
 		return new URI(
-				ApiConfiguration.getGlobalScheme(),
+				"https",
 				ApiConfiguration.getWeatherAuthority(),
 				ApiConfiguration.getForecastPath(),
 				ApiConfiguration.getWeatherQueryByCity() + cityToSearch ,
@@ -66,10 +66,32 @@ public class RestApi
 	public static URI getForecastURIbyID(int cityID) throws URISyntaxException
 	{
 		return new URI(
-				ApiConfiguration.getGlobalScheme(),
+				"https",
 				ApiConfiguration.getWeatherAuthority(),
 				ApiConfiguration.getForecastPath(),
 				ApiConfiguration.getWeatherQueryByID() + cityID,
+				""
+		);
+	}
+	
+	public static URI getPositionURI(String ip) throws URISyntaxException
+	{
+		return new URI(
+				"http",
+				ApiConfiguration.getGeoIPauthority(),
+				ApiConfiguration.getGeoIPpath() + ip,
+				"",
+				""
+		);
+	}
+	
+	public static URI getExternalIPuri() throws URISyntaxException
+	{
+		return new URI(
+				"http",
+				ApiConfiguration.getExternalIP(),
+				"",
+				"",
 				""
 		);
 	}

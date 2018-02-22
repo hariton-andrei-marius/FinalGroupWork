@@ -13,21 +13,11 @@ import org.springframework.validation.annotation.Validated;
 public class ApiConfiguration {
 	
     @NotBlank
-    private static String globalScheme, 
-    	weatherAppID,weatherAuthority, weatherPath, weatherQueryByCity,
-    	weatherQueryByID, cityDetailsAuthority, cityDetailsPathCities,
-    	cityDetailsQuery, cityDetailsImageUrl, cityDetailsPathImages,
-    	forecastPath;
-
-	public static String getGlobalScheme()
-	{
-		return globalScheme;
-	}
-
-	public static void setGlobalScheme(String globalScheme)
-	{
-		ApiConfiguration.globalScheme = globalScheme;
-	}
+    private static String weatherAppID, weatherAuthority, weatherPath,
+    	weatherQueryByCity, weatherQueryByID, cityDetailsAuthority,
+    	cityDetailsPathCities, cityDetailsQuery, cityDetailsImageUrl,
+    	cityDetailsPathImages, forecastPath, geoIPauthority, geoIPpath,
+    	externalIP;
 
 	public static String getWeatherAppID()
 	{
@@ -137,5 +127,35 @@ public class ApiConfiguration {
 	public static void setForecastPath(String forecastPath)
 	{
 		ApiConfiguration.forecastPath = forecastPath;
+	}
+
+	public static String getGeoIPauthority()
+	{
+		return geoIPauthority;
+	}
+
+	public static void setGeoIPauthority(String geoIPauthority)
+	{
+		ApiConfiguration.geoIPauthority = geoIPauthority;
+	}
+
+	public static String getGeoIPpath()
+	{
+		return geoIPpath;
+	}
+
+	public static void setGeoIPpath(String geoIPpath)
+	{
+		ApiConfiguration.geoIPpath = geoIPpath;
+	}
+
+	public static String getExternalIP()
+	{
+		return externalIP;
+	}
+
+	public static void setExternalIP(String externalIP)
+	{
+		ApiConfiguration.externalIP = externalIP;
 	}
 }
