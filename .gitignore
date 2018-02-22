@@ -8,6 +8,7 @@ build/
 gradle/
 .sass-cache/
 node_modules/
+style/
 
 # FILES
 
