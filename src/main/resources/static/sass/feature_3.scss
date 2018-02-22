@@ -1,9 +1,13 @@
 $input_background: rgb(232, 232, 232);
+$input_background_darker: rgb(212, 212, 212);
+
+$input_text: rgb(128, 128, 128);
+$input_text_darker: rgb(96, 96, 96);
 
 .block3{
 	position: fixed;
 	bottom: 0px;
-	color: gray;
+	color: $input_text;
 	background-color:  #fafafa;
 	width: 100%;
 }
@@ -51,6 +55,11 @@ $input_background: rgb(232, 232, 232);
 
 	li{
 		padding-bottom: 15px;
+
+		&:hover {
+			color: $input_text_darker;
+			cursor: pointer;
+		}
 	}
 }
 //

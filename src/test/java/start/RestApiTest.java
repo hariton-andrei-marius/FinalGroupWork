@@ -15,7 +15,7 @@ public class RestApiTest
 	{
 		try
 		{
-			assert(RestApi.getWeatherURIbyCity("bologna").toString().length() == 13);
+			assert(RestApi.getWeatherURIbyCity("bologna").toString().length() > 3);
 		}
 		catch (URISyntaxException e)
 		{
@@ -28,7 +28,7 @@ public class RestApiTest
 	{
 		try
 		{
-			assert(RestApi.getCityDetailsURI("bologna").toString().length() != 0);
+			assert(RestApi.getCityDetailsURI("bologna").toString().length() > 3);
 		}
 		catch (URISyntaxException e)
 		{
@@ -54,7 +54,7 @@ public class RestApiTest
 	{
 		try
 		{
-			assert(RestApi.getForecastURIbyCity("bologna").toString().length() == 13);
+			assert(RestApi.getForecastURIbyCity("bologna").toString().length() > 3);
 		}
 		catch (URISyntaxException e)
 		{
