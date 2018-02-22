@@ -6,7 +6,7 @@
 	color: #fff;
 	display: flex;
 	flex-direction: column;
-	padding: 130px 100px;
+	padding-top: 100px;
 
   span {
     padding: 10px 10px;
@@ -28,7 +28,7 @@
 
 .city{
 	font-size: 50px;
-	margin: 10px;
+	margin-top: 10px;
 }
 
 .temp{
@@ -37,7 +37,7 @@
 
 .description {
 	font-weight: bold;
-	margin: 10px;
+	margin: 10px 0 10px 0;
 }
 
 /*sole: 01d 											content: "\f185";
