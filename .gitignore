@@ -18,3 +18,5 @@ mvnw
 pom.xml
 *.bat
 *.cmd
+*.css
+*.map

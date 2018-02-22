@@ -2,7 +2,7 @@
 	width: 100%;
 	text-align: center;
 	position: absolute;
-	z-index: 100;
+	z-index: 0;
 	color: #fff;
 	display: flex;
 	flex-direction: column;
@@ -22,7 +22,7 @@
 	position: relative;
 	width: 100%;
 	height:70vh;
-	z-index: 1;
+	z-index: -1;
 }
 
 .city{
