@@ -92,6 +92,8 @@ mist: 50d												content: "\f1be";*/
 
 .block2 {
   background-color: #fafafa; }
+  .block2 ul {
+    margin-bottom: 90px; }
 
 .succ_date {
   display: flex;
