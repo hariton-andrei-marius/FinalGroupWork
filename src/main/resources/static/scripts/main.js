@@ -1,1 +1,1 @@
-retrievImage.start();
+retrieveImage.start();
