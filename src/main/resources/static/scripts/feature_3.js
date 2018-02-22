@@ -1,7 +1,7 @@
 var getInput= (function () {
 
   /* DECLARING VARIABLES */
-  var $input, $listaCitta, $nomiCitta, $form;
+  var $input, $listaCitta, $nomiCitta, $form, $insert, $idForm;
   var RESTURL = "/rest/city_details";
 
 
@@ -12,6 +12,8 @@ var getInput= (function () {
     $listaCitta = $(".listaCitta");
     $nomiCitta = $(".nomiCitta");
     $form = $(".blockIn");
+    $insert = $('.insert');
+    $idForm = $('#idForm');
     };
 
    /* PRIVATE BUSINESS FUNCTIONS */
@@ -64,8 +66,8 @@ var getInput= (function () {
 
   var _funcSubmit = function(geoname){
     debugger;
-    $('.insert').val(geoname);
-    $('#idForm').submit();
+    $insert.val(geoname);
+    $idForm.submit();
   }
 
 
@@ -83,7 +85,7 @@ var getInput= (function () {
       _ajaxCall_id($(this).data("url"));
     });
 
-    $('#idForm').on('keypress',function(e){
+    $idForm.on('keypress',function(e){
       return e.which !== 13;
     });
 
