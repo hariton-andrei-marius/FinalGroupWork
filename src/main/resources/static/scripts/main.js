@@ -1,1 +1,1 @@
-getInput.start();
+retrieveImage.start();
