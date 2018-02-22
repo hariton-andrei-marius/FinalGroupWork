@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
+import start.classes.Forecast;
 import start.modules.RestApi;
 
 @RestController
@@ -16,19 +17,19 @@ public class ForecastRestController {
 
 	
 	@RequestMapping("/rest/forecast")
-	public Object weather(Model model,
+	public Forecast weather(Model model,
 
 		@RequestParam(value = "city", required = false, defaultValue = "Bologna,it") String city)
 	{
-		Object results = null;
+		Forecast results = null;
 		
 		try
 		{
-			results = new RestTemplate().getForObject(RestApi.getForecastURIbyCity(city), Object.class);
+			results = new RestTemplate().getForObject(RestApi.getForecastURIbyCity(city), Forecast.class);
 		}
 		catch (RestClientException | URISyntaxException e)
 		{
-			results = e.getMessage();
+			e.printStackTrace();
 		}
     	
 		return results;

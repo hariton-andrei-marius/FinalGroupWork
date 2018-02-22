@@ -33,7 +33,7 @@ public class IndexController {
 			//images = new RestTemplate().getForObject(RestApi.getImagesURI(city), Object.class);
 			weather = new RestTemplate().getForObject(RestApi.getWeatherURIbyID(id), Object.class);
 			//forecast = new RestTemplate().getForObject(RestApi.getForecastURIbyID(id), Object.class);
-		}
+		}                     
 		catch (RestClientException | URISyntaxException e)
 		{
 			//	images = e.getMessage();
@@ -48,7 +48,7 @@ public class IndexController {
 		//model.addAttribute("images", images);
 		model.addAttribute("weather", weather);
 		//model.addAttribute("forecast", forecast);
-		model.addAttribute("date", date);
+		model.addAttribute("date", date);                                
     	
 		return "index";
 	}

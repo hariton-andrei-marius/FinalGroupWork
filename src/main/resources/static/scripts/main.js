@@ -3,7 +3,7 @@
 retrieveImage.start();
 
 // FEATURE 2
-
+forecastScript.start();
 // ---
 
 // FEATURE 3

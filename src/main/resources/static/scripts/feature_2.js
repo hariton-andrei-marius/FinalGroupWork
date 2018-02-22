@@ -12,15 +12,15 @@ var forecastScript = (function () {
     $imageCitys = $(".city").find("h1");
   };
 
-  var _getData = function(data){
-    var dataCorrente = "null";
-    for(var i = 1, cont = 1 ; i <= 5 ; i++ , cont+=7){
-      while(dataCorrente != data.list[cont].dt_txt.substring(0,11)){
-        dataCorrente = data.list[cont].dt_txt.substring(0,11);
-      }
-      $(".giorno"+i+"").text(dataCorrente);
-      }
-    }
+  // var _getData = function(data){
+  //   var dataCorrente = "null";
+  //   for(var i = 1, cont = 1 ; i <= 5 ; i++ , cont+=7){
+  //     while(dataCorrente != data.list[cont].dt_txt.substring(0,11)){
+  //       dataCorrente = data.list[cont].dt_txt.substring(0,11);
+  //     }
+  //     $(".giorno"+i+"").text(dataCorrente);
+  //     }
+  //   }
 
     var checkDate = function () {
 
@@ -35,11 +35,13 @@ var forecastScript = (function () {
        type: "GET",
        dataType: 'json',
        data: {
-         name: $imageCitys.text()
+         name: $imageCitys.text(),
+         dt_txt: dt_txt
        },
        cache: false,
        success: function(data) {
-         _getData(data)
+        // _getData(data)
+        console.log("prova "+data.dt_txt);
        }
      });
    }

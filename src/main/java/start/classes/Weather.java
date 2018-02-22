@@ -1,5 +1,10 @@
 package start.classes;
 
 public class Weather {
-	String weather;
+	private String icon;
+	
+	public String getIcon() {
+		return icon;
+	}
+	
 }

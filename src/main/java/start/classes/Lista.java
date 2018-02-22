@@ -1,16 +1,23 @@
 package start.classes;
 
 public class Lista {
-	private Dettagli [] dettagli;
-	private String numero = "10";
 	
-	public Dettagli[] getDettagli() {
-		return dettagli;
+	private Main_det main;
+	private Weather [] weather;
+	private String dt_txt;
+	
+	public Main_det getMain() {
+		return main;
 	}
 	
-	public String getNumero() {
-		return numero;
+	public Weather[] getWeather() {
+		return weather;
 	}
+	
+	public String getDt_txt() {
+		return dt_txt;
+	}
+	
 	
 	
 }
