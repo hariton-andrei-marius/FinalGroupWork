@@ -17,7 +17,7 @@ public class CityDetailsRestController {
 	@RequestMapping("/rest/city_details")
 	public Object cityDetails(Model model,
 
-		@RequestParam(value = "city", required = false, defaultValue = "Bologna") String city)
+		@RequestParam(value = "city", required = false) String city)
 	{
 		Object results = null;
 		
