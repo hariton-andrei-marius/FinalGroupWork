@@ -1,7 +1,8 @@
 package start.controllers;
 
 import java.net.URISyntaxException;
-import java.text.SimpleDateFormat;
+import java.sql.Timestamp;
+//import java.util.Calendar;
 import java.util.Date;
 
 import org.springframework.stereotype.Controller;
@@ -26,11 +27,11 @@ public class IndexController {
 		@RequestParam(value = "id", required = false, defaultValue = "3181928") int id) throws RestClientException, URISyntaxException, Exception
 	{
 		Weather weather = new RestTemplate().getForObject(RestApi.getWeatherURIbyID(id), Weather.class);
-		SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.mmm'Z'");
-		f.parse(Integer.toString( weather.getDt() ));
+		Timestamp stamp = new Timestamp(System.currentTimeMillis());
+		Date date = new Date(stamp.getTime());
 		
 		model.addAttribute("weather", weather);
-		model.addAttribute("date", f.toString());
+		model.addAttribute("date", date);
 		model.addAttribute("position", Utils.getPosition());
     	
 		return "index";
