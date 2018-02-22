@@ -9,3 +9,4 @@ retrieveImage.start();
 // FEATURE 3
 
 getInput.start();
+speechInput.start();

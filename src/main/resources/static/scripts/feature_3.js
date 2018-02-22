@@ -1,11 +1,14 @@
-var getInput = (function() {
+const getInput = (function() {
 
 	/* DECLARING VARIABLES */
+	
 	var $input, $listaCitta, $nomiCitta, $form, $insert, $idForm;
 	var RESTURL = "/rest/city_details";
 
 	/* CACHING VARIABLES */
+	
 	function _setup() {
+		
 		$input = $(".input");
 		$listaCitta = $(".listaCitta");
 		$nomiCitta = $(".nomiCitta");
@@ -16,28 +19,35 @@ var getInput = (function() {
 
 	/* PRIVATE BUSINESS FUNCTIONS */
 
-	var _controlloCaratteri = function() {
+	const _controlloCaratteri = function() {
+		
 		if ($input.val().length > 2) {
+			
 			_ajaxCall($input.val());
-		} else {
+		}
+		else {
+			
 			$listaCitta.empty();
 		}
 	}
 
-	var _aggiungiCitta = function(element) {
+	const _aggiungiCitta = function(element) {
+		
 		$listaCitta.append("<li class='nomiCitta' data-url='"
 				+ element._links["city:item"].href + "'> "
 				+ element.matching_full_name + "</li>");
 	}
 
-	var _filteringData = function(data) {
+	const _filteringData = function(data) {
+		
 		$listaCitta.empty();
 		data._embedded["city:search-results"].forEach(function(element) {
 			_aggiungiCitta(element);
 		});
 	}
 
-	var _ajaxCall = function(data) {
+	const _ajaxCall = function(data) {
+		
 		$.ajax({
 			url : RESTURL,
 			type : "GET",
@@ -52,7 +62,8 @@ var getInput = (function() {
 		});
 	}
 
-	var _ajaxCall_id = function(url) {
+	const _ajaxCall_id = function(url) {
+		
 		$.ajax({
 			url : url,
 			type : "GET",
@@ -65,15 +76,14 @@ var getInput = (function() {
 		});
 	}
 
-	var _funcSubmit = function(geoname) {
+	const _funcSubmit = function(geoname) {
 
 		$insert.val(geoname);
 		$idForm.submit();
 	}
 
-	/* END PRIVATE BUSINESS FUNCTIONS */
-
 	/* DECLARING EVENT HANDLER */
+	
 	function _setObserver() {
 
 		$input.keyup(function() {
@@ -102,7 +112,8 @@ var getInput = (function() {
 	}
 
 	return {
-		start : _init
+		start : _init,
+		checkCharacters: _controlloCaratteri
 	};
 
 })();
