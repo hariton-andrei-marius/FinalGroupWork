@@ -3,13 +3,16 @@ var forecastScript = (function () {
   /* DECLARING VARIABLES */
 
 
-  var $imageCitys , day;
+  var $imageCitys , day, id, $li, $ul;
 
   var URL5DAYS;
   /* CACHING VARIABLES */
   function _setup() {
     URL5DAYS = "/rest/forecast";
-    $imageCitys = $(".city").find("h1");
+    $imageCitys = $(".city");
+    id = $(".ul").attr("data-id");
+    $ul = $('.ul');
+    $li = $('<li class="succ_date"> <h2 class="data"> </h2><i class="material-icons" th:data-icons-1=""></i> <h2 class="temperatura"> </h2> </li>');
   };
 
   // var _getData = function(data){
@@ -22,9 +25,22 @@ var forecastScript = (function () {
   //     }
   //   }
 
-    var checkDate = function () {
-
+  var aggiungiGiorno= function(data, i){
+    var $cloneLi = $li.clone();
+    $ul.append($cloneLi);
+    $cloneLi.addClass("giorno" + i + "");
+    var temperature = parseInt(data.mediaMin[i], 10) + "° " + parseInt(data.mediaMax[i], 10)+ "° ";
+    $cloneLi.find('.temperatura').text(temperature);
     }
+
+  var inserisciTemp = function(data) {
+    var min = data.mediaMin;
+    var max = data.mediaMax;
+    for(var i = 0; i < min.length; i++){
+      aggiungiGiorno(data, i);
+    }
+
+  }
 
 
 
@@ -35,13 +51,11 @@ var forecastScript = (function () {
        type: "GET",
        dataType: 'json',
        data: {
-         name: $imageCitys.text(),
-         dt_txt: dt_txt
+         id: id
        },
        cache: false,
        success: function(data) {
-        // _getData(data)
-        console.log("prova "+data.dt_txt);
+        inserisciTemp(data);
        }
      });
    }

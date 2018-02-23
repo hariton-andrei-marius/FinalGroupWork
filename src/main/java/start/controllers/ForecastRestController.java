@@ -10,6 +10,7 @@ import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
 import start.classes.Forecast;
+import start.classes.ForecastWrapper;
 import start.modules.RestApi;
 
 @RestController
@@ -17,22 +18,29 @@ public class ForecastRestController {
 
 	
 	@RequestMapping("/rest/forecast")
-	public Forecast weather(Model model,
+	public ForecastWrapper weather(Model model,
 
-		@RequestParam(value = "city", required = false, defaultValue = "Bologna,it") String city)
-	{
+		//@RequestParam(value = "city", required = false, defaultValue = "Bologna,it") String city)
+		@RequestParam(value = "id", required = false, defaultValue = "3181928") int id) throws Exception
+		{
 		Forecast results = null;
-		
+		ForecastWrapper wrapper= null;
 		try
 		{
-			results = new RestTemplate().getForObject(RestApi.getForecastURIbyCity(city), Forecast.class);
+			results = new RestTemplate().getForObject(RestApi.getForecastURIbyID(id), Forecast.class);
+			wrapper = new ForecastWrapper();
+			wrapper.setLista(results.getList());
+			wrapper.getGiorno();
+			wrapper.trovaTemp();
+//			wrapper.cercaIcona();
+			
 		}
 		catch (RestClientException | URISyntaxException e)
 		{
 			e.printStackTrace();
 		}
     	
-		return results;
+		return wrapper;
 	}
 
 }

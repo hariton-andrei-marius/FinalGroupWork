@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
 
 import start.classes.Forecast;
+import start.classes.ForecastWrapper;
 import start.classes.Weather;
 import start.modules.RestApi;
 import start.modules.Utils;
@@ -27,14 +28,10 @@ public class IndexController {
 		Weather weather = new RestTemplate().getForObject(RestApi.getWeatherURIbyID(id), Weather.class);
 		Timestamp stamp = new Timestamp(System.currentTimeMillis());
 		Date date = new Date(stamp.getTime());
-		Forecast forecast = new RestTemplate().getForObject(RestApi.getWeatherURIbyID(id), Forecast.class);
-		forecast.getGiorno();
-		forecast.trovaTemp();
-		
 		model.addAttribute("weather", weather);
 		model.addAttribute("date", date);
 		model.addAttribute("position", Utils.getPosition());
-    	model.addAttribute("forecast", forecast);
+    	model.addAttribute("id", id);
 		
 		return "index";
 	}
