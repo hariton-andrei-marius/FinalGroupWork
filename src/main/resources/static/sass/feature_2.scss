@@ -1,6 +1,19 @@
+$list_background: rgb(220, 220, 220);
+
 .block2{
 	background-color: #fafafa;
 	margin-bottom: 79px;
+
+	ul {
+		li {
+			transition: background 1s;
+
+			&:hover {
+				background: $list_background;
+				cursor: pointer;
+			}
+		}
+	}
 }
 
 .succ_date{

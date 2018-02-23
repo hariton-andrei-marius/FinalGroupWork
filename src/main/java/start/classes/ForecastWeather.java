@@ -6,5 +6,4 @@ public class ForecastWeather {
 	public String getIcon() {
 		return icon;
 	}
-	
 }
