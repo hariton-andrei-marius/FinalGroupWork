@@ -11,35 +11,37 @@ import org.springframework.web.client.RestTemplate;
 
 import start.classes.Forecast;
 import start.classes.ForecastWrapper;
+import start.classes.Language;
 import start.modules.RestApi;
+import start.modules.Utils;
 
 @RestController
 public class ForecastRestController {
 
-	
+
 	@RequestMapping("/rest/forecast")
 	public ForecastWrapper weather(Model model,
+		@RequestParam(value = "id", required = false, defaultValue = "3181928") int id) throws RestClientException, URISyntaxException, Exception
+	{
+		// Language
+		String language = new Language().getLanguage(Utils.getPosition().getCountry_code());
 
-		//@RequestParam(value = "city", required = false, defaultValue = "Bologna,it") String city)
-		@RequestParam(value = "id", required = false, defaultValue = "3181928") int id) throws Exception
-		{
 		Forecast results = null;
 		ForecastWrapper wrapper= null;
 		try
 		{
-			results = new RestTemplate().getForObject(RestApi.getForecastURIbyID(id), Forecast.class);
+			results = new RestTemplate().getForObject(RestApi.getForecastURIbyID(id, language), Forecast.class);
 			wrapper = new ForecastWrapper();
 			wrapper.setLista(results.getList());
 			wrapper.getGiorno();
 			wrapper.trovaTemp();
 //			wrapper.cercaIcona();
-			
 		}
 		catch (RestClientException | URISyntaxException e)
 		{
 			e.printStackTrace();
 		}
-    	
+
 		return wrapper;
 	}
 

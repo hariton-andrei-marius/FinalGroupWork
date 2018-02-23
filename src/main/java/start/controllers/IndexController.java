@@ -1,23 +1,23 @@
 package start.controllers;
 
-import java.sql.Timestamp;
-import java.util.Date;
+import java.util.Locale;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.client.RestTemplate;
 
 import start.classes.Forecast;
 import start.classes.ForecastWrapper;
 import start.classes.Weather;
 import start.modules.RestApi;
+import start.classes.Language;
+import start.modules.Procedures;
 import start.modules.Utils;
 
 @Controller
 public class IndexController {
-	
+
 
 	@RequestMapping("/index")
 	public String weather(Model model,
@@ -25,14 +25,22 @@ public class IndexController {
 		@RequestParam(value = "city", required = false, defaultValue = "bologna") String city,
 		@RequestParam(value = "id", required = false, defaultValue = "3181928") int id) throws Exception
 	{
-		Weather weather = new RestTemplate().getForObject(RestApi.getWeatherURIbyID(id), Weather.class);
-		Timestamp stamp = new Timestamp(System.currentTimeMillis());
-		Date date = new Date(stamp.getTime());
-		model.addAttribute("weather", weather);
-		model.addAttribute("date", date);
+		// LANGUAGE
+		String language = new Language().getLanguage(Utils.getPosition().getCountry_code());
+		Locale locale = new Locale(language, Utils.getPosition().getCountry_code());
+
+		// WEATHER
+		Procedures.indexCreateWeather(model, language, id);
+
+		// DATE
+		Procedures.indexCreateDate(model, locale);
+
+		// POSITION
 		model.addAttribute("position", Utils.getPosition());
+
+		// ID
     	model.addAttribute("id", id);
-		
+
 		return "index";
 	}
 
