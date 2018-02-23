@@ -65,7 +65,7 @@ public class ForecastWrapper {
 			}		
 		}
 	}
-	
+	//listaPerGiorno.size()
 	public void trovaTemp() {
 		Iterator<LinkedList> iterator = listaGiorni.iterator();
 		mediaMin = new LinkedList<Double>();
@@ -97,51 +97,57 @@ public class ForecastWrapper {
 			Double corrente = iterTemp.next();
 			somma += corrente; 
 		}
-		System.out.println("temperatura " + somma/cont);
+		//System.out.println("temperatura " + somma/cont);
 		return (somma/cont);
 		
 	}
 	
 	
-//	public void cercaIcona() {
-//		Iterator<LinkedList> iterator = listaGiorni.iterator();
-//		icone = new LinkedList<Icone>();
-//		while(iterator.hasNext()) {
-//			LinkedList corrente = iterator.next();
-//			Iterator<Lista> it = corrente.iterator();
-//			String [] listaIcone = new String[list.length];
-//			int cont = 0;
-//			System.out.println("lunghezza lista icone :" + listaIcone.length);
-//			while(it.hasNext()) {
-//				System.out.println("sono nel while");
-//				Lista corr = it.next();
-//				ForecastWeather weather = corr.getWeatherForecast();
-//				System.out.println("weather ");
-//				listaIcone[cont] = weather.getIcon();//<----
-//				System.out.println("lista icone: " + listaIcone[cont] + "cont : " + cont );
-//				cont++;
-//			}
-//			System.out.println("sono uscito dal while");
-//			icone.add(iconaRipetuta(listaIcone));
-//		
-//		}
-//	}
-//	
-//	public Icone iconaRipetuta(String [] listaIcone) {
-//		int[] conto = new int[listaIcone.length];
-//		for(int i = 0; i<listaIcone.length; i++ ) {
-//			String temp = listaIcone[i];
-//			conto[i] = 0;
-//			for(int j = 0; j<listaIcone.length; j++) {
-//				if(temp.equals(listaIcone[j])) {
-//					conto[i]++; 
-//					System.out.println("icone : " + listaIcone[i] + "  "+  "conteggio icone : " + conto[i] + "sto leggendo l'icona: " + listaIcone[j] );
-//				}
-//			}
-//		}
-//		Icone objIcon = new Icone();
-//		objIcon.setArray(listaIcone, conto);
-//		return objIcon;
-//	}
+	public void cercaIcona() {
+		Iterator<LinkedList> iterator = listaGiorni.iterator();
+		icone = new LinkedList<Icone>();
+		int contGiorno = 0;
+		while(iterator.hasNext()) {
+			LinkedList corrente = iterator.next();
+			Iterator<Lista> it = corrente.iterator();
+			int cont = 0;
+			String [] listaIcone = new String[listaGiorni.get(contGiorno).size()];
+			System.out.println("lunghezza lista icone :" + listaIcone.length);
+			while(it.hasNext()) {
+				System.out.println("sono nel while");
+				Lista corr = it.next();
+				ForecastWeather weather = corr.getWeather()[0];
+				System.out.println("weather ");
+				listaIcone[cont] = weather.getIcon();//<----
+				System.out.println("lista icone: " + listaIcone[cont] + "cont : " + cont );
+				cont++;
+			}
+			System.out.println("sono uscito dal while");
+			icone.add(iconaRipetuta(listaIcone));
+
+			contGiorno++;
+		}
+
+	}
+	
+	public Icone iconaRipetuta(String [] listaIcone) {
+		int[] conto = new int[listaIcone.length];
+		System.out.println("lungehnjdbs " +listaIcone.length);
+		for(int i = 0; i<listaIcone.length; i++ ) {
+			String temp = listaIcone[i];
+			conto[i] = 0;
+			System.out.println("temp : " + temp + "iii " +i);
+			for(int j = 0; j<listaIcone.length; j++) {
+				System.out.println("sono nel for j : " +j );
+				if(temp.equals(listaIcone[j])) {
+					conto[i]++; 
+					System.out.println("conteggio icone : " + conto[i] + "sto leggendo l'icona: " + listaIcone[j] );
+				}
+			}
+		}
+		Icone objIcon = new Icone();
+		objIcon.setArray(listaIcone, conto);
+		return objIcon;
+	}
 	
 }
