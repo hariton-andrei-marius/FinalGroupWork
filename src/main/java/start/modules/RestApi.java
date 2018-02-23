@@ -7,24 +7,26 @@ import start.services.ApiConfiguration;
 
 public class RestApi
 {
-	public static URI getWeatherURIbyCity(String cityToSearch) throws URISyntaxException
+	public static URI getWeatherURIbyCity(String cityToSearch, String language) throws URISyntaxException
 	{
 		return new URI(
 				"https",
 				ApiConfiguration.getWeatherAuthority(),
 				ApiConfiguration.getWeatherPath(),
-				ApiConfiguration.getWeatherQueryByCity() + cityToSearch,
+				ApiConfiguration.getWeatherQueryByCity()
+					+ cityToSearch + "&lang=" + language,
 				""
 		);
 	}
 	
-	public static URI getWeatherURIbyID(int cityID) throws URISyntaxException
+	public static URI getWeatherURIbyID(int cityID, String language) throws URISyntaxException
 	{
 		return new URI(
 				"https",
 				ApiConfiguration.getWeatherAuthority(),
 				ApiConfiguration.getWeatherPath(),
-				ApiConfiguration.getWeatherQueryByID() + cityID,
+				ApiConfiguration.getWeatherQueryByID()
+				+ cityID + "&lang=" + language,
 				""
 		);
 	}
@@ -52,24 +54,26 @@ public class RestApi
 		);
 	}
 	
-	public static URI getForecastURIbyCity(String cityToSearch) throws URISyntaxException
+	public static URI getForecastURIbyCity(String cityToSearch, String language) throws URISyntaxException
 	{
 		return new URI(
 				"https",
 				ApiConfiguration.getWeatherAuthority(),
 				ApiConfiguration.getForecastPath(),
-				ApiConfiguration.getWeatherQueryByCity() + cityToSearch ,
+				ApiConfiguration.getWeatherQueryByCity()
+				+ cityToSearch + "&lang=" + language,
 				""
 		);
 	}
 	
-	public static URI getForecastURIbyID(int cityID) throws URISyntaxException
+	public static URI getForecastURIbyID(int cityID, String language) throws URISyntaxException
 	{
 		return new URI(
 				"https",
 				ApiConfiguration.getWeatherAuthority(),
 				ApiConfiguration.getForecastPath(),
-				ApiConfiguration.getWeatherQueryByID() + cityID,
+				ApiConfiguration.getWeatherQueryByID()
+				+ cityID + "&lang=" + language,
 				""
 		);
 	}

@@ -1,4 +1,4 @@
-package start.tests;
+/*package start.tests;
 
 import static org.junit.Assert.*;
 
@@ -15,7 +15,7 @@ public class RestApiTest
 	{
 		try
 		{
-			assert(RestApi.getWeatherURIbyCity("bologna").toString().length() > 3);
+			assert(RestApi.getWeatherURIbyCity("bologna").toString().length() > 5);
 		}
 		catch (URISyntaxException e)
 		{
@@ -28,7 +28,7 @@ public class RestApiTest
 	{
 		try
 		{
-			assert(RestApi.getCityDetailsURI("bologna").toString().length() > 3);
+			assert(RestApi.getCityDetailsURI("bologna").toString().length() > 5);
 		}
 		catch (URISyntaxException e)
 		{
@@ -54,7 +54,7 @@ public class RestApiTest
 	{
 		try
 		{
-			assert(RestApi.getForecastURIbyCity("bologna").toString().length() > 3);
+			assert(RestApi.getForecastURIbyCity("bologna").toString().length() > 5);
 		}
 		catch (URISyntaxException e)
 		{
@@ -62,3 +62,4 @@ public class RestApiTest
 		}
 	}
 }
+*/

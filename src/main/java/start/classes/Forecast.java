@@ -3,14 +3,10 @@ package start.classes;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
-import java.util.Map;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import groovyjarjarantlr.collections.List;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Forecast {

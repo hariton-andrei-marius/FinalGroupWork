@@ -6,18 +6,18 @@
 	color: #fff;
 	display: flex;
 	flex-direction: column;
-	padding-top: 100px;
+	margin-top: 50px;
 
 	.position {
 		margin-bottom: 20px;
-	}
 
-  span {
-    padding: 10px 10px;
-  }
+		.gps {
+			font-size: 15px;
+		}
 
-	.material-icons {
-		font-size: 70px;
+		.place{
+			font-size: 18px;
+		}
 	}
 }
 
@@ -25,6 +25,7 @@
 
 .imageContainer {
 	position: relative;
+	width: 100%;
 }
 
 .imageCity{
@@ -36,13 +37,13 @@
 }
 
 .imageOverlay {
-  background: rgba(0, 0, 0, 0.2);
-  width: 100%;
-  height: 99.7%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
+	background: rgba(0, 0, 0, 0.2);
+	width: 100%;
+	height: 99.7%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
 }
 
 .city{
@@ -121,4 +122,10 @@ mist: 50d												content: "\f1be";
 .icon-50d:before , .icon-50n:before {
 	font: normal normal normal 100px FontAwesome;
 	content: "\f1be";
+}
+
+@media screen and (min-width: 768px) {
+	.container {
+		margin-top: 100px;
+	}
 }

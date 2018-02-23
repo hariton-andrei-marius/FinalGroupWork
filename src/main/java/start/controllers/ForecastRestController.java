@@ -10,7 +10,9 @@ import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
 import start.classes.Forecast;
+import start.classes.Language;
 import start.modules.RestApi;
+import start.modules.Utils;
 
 @RestController
 public class ForecastRestController {
@@ -19,13 +21,16 @@ public class ForecastRestController {
 	@RequestMapping("/rest/forecast")
 	public Forecast weather(Model model,
 
-		@RequestParam(value = "city", required = false, defaultValue = "Bologna,it") String city)
+		@RequestParam(value = "city", required = false, defaultValue = "Bologna,it") String city) throws RestClientException, URISyntaxException, Exception
 	{
+		// Language
+		String language = new Language().getLanguage(Utils.getPosition().getCountry_code());
+		
 		Forecast results = null;
 		
 		try
 		{
-			results = new RestTemplate().getForObject(RestApi.getForecastURIbyCity(city), Forecast.class);
+			results = new RestTemplate().getForObject(RestApi.getForecastURIbyCity(city, language), Forecast.class);
 		}
 		catch (RestClientException | URISyntaxException e)
 		{
