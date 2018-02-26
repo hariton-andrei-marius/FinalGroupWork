@@ -21,6 +21,11 @@ $list_background: rgb(220, 220, 220);
   justify-content: space-around;
 	border: 1px solid #fff;
 	font-size: 15px;
+
+	.icon{
+		padding-top: 11px;
+		font: normal normal normal 20px FontAwesome;
+	}
 }
 
 .first{
@@ -35,4 +40,5 @@ $list_background: rgb(220, 220, 220);
 	padding: 14px 10px;
 	display: flex;
 	vertical-align: middle;
+	width: 25%;
 }
