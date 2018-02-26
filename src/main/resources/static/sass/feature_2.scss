@@ -3,8 +3,14 @@
 	margin-bottom: 79px;
 
 	ul {
+
+		li:first-child{
+			color: #484747;
+		}
+
 		li {
 			transition: background 1s;
+			color: $primary-color;
 
 			&:hover {
 				@extend %hover-custom-cursor;
@@ -28,19 +34,14 @@
 	}
 
 	h2 {
+		display: flex;
 		padding: 14px 10px;
+		justify-content: center;
+		flex-direction: row;
 		width: 25%;
 	}
 
 	.temperatura {
 		text-align: right;
 	}
-}
-
-.first {
-	color: #484747;
-}
-
-.other {
-	color: $primary-color;
 }
