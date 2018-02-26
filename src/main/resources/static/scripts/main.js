@@ -3,13 +3,10 @@
 retrieveImage.start();
 
 // FEATURE 2
+
 forecastScript.start();
-// ---
 
-// FEATURE
-
-
-
+// FEATURE 3
 
 getInput.start();
 speechInput.start();

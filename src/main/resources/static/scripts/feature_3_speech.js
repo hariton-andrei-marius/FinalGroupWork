@@ -35,21 +35,21 @@ const speechInput = (function() {
 		let word = e.results[last][0].transcript;
 		
 		$text.val(word);
-	};
-
-	const speechEnd = function() {
-		
-		recognition.stop();
-		$speechIcon.css('color', 'darkgrey');
-		document.getElementById("inputCity").placeholder = "Insert your city";
 		
 		// Extern call to feature_3.js
 		getInput.checkCharacters();
 	};
 
+	const speechEnd = function() {
+		
+		recognition.stop();
+		$speechIcon.css('color', 'grey');
+		document.getElementById("inputCity").placeholder = "Insert your city";
+	};
+
 	const speechError = function(e) {
 		
-		$speechIcon.css('color', 'darkgrey');
+		$speechIcon.css('color', 'grey');
 		document.getElementById("inputCity").placeholder = "Insert your city";
 	};
 

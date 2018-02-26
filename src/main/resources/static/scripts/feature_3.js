@@ -86,20 +86,27 @@ const getInput = (function() {
 	
 	function _setObserver() {
 
-		$input.keyup(function() {
-			_controlloCaratteri();
-		});
-
-		$listaCitta.on("click", "li", function(e) {
-			_ajaxCall_id($(this).data("url"));
+		// INPUT EVENTS
+		
+		$input.on("keypress", function() {
+			
+			// If there are more that 2 characters
+			if($input.val().length > 2)
+				_controlloCaratteri();
 		});
 
 		$idForm.on('keypress', function(e) {
+			
 			return e.which !== 13;
 		});
 
-	}
-	;
+		// RESULTS EVENTS
+		
+		$listaCitta.on("click", "li", function(e) {
+			
+			_ajaxCall_id($(this).data("url"));
+		});
+	};
 
 	function _init() {
 		try {

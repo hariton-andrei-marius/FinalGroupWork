@@ -21,33 +21,37 @@ public class ApiTest {
 	private MockMvc mockMvc;
 	
 	@Test
-	public void testWeather() throws Exception {
+	public void testWeatherRoute() throws Exception {
+		
 		mockMvc.perform(get("/rest/weather").param("id", "3181928"))
 				.andExpect(content().string(containsString("Bologna")));
 	}
 	
 	@Test
-	public void testForecast() throws Exception {
+	public void testForecastRoute() throws Exception {
+		
 		mockMvc.perform(get("/rest/forecast").param("city", "Bologna"))
 				.andExpect(content().string(containsString("temp_max")));
 	}
 	
 	@Test
-	public void testImages() throws Exception {
+	public void testImagesRoute() throws Exception {
+		
 		mockMvc.perform(get("/rest/images").param("city", "bologna"))
 				.andExpect(content().string(containsString("photos")));
 	}
 	
 	@Test
-	public void testCityDetails() throws Exception {
+	public void testCityDetailsRoute() throws Exception {
+		
 		mockMvc.perform(get("/rest/city_details").param("city", "bologna"))
 				.andExpect(content().string(containsString("Bologna")));
 	}
 	
 	@Test
-	public void testPosition() throws Exception {
+	public void testPositionRoute() throws Exception {
+		
 		mockMvc.perform(get("/rest/position"))
 				.andExpect(content().string(containsString("country_code")));
 	}
-
 }

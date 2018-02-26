@@ -7,10 +7,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import start.classes.Forecast;
-import start.classes.ForecastWrapper;
-import start.classes.Weather;
-import start.modules.RestApi;
 import start.classes.Language;
 import start.modules.Procedures;
 import start.modules.Utils;
