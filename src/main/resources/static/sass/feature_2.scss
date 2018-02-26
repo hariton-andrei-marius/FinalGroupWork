@@ -5,14 +5,11 @@ $list_background: rgb(220, 220, 220);
 	margin-bottom: 79px;
 
 	ul {
-		li {
-			transition: background 1s;
 
-			&:hover {
-				background: $list_background;
-				cursor: pointer;
-			}
+		li:first-child{
+			color: #484747 ;
 		}
+		color: gray;
 	}
 }
 
@@ -21,24 +18,24 @@ $list_background: rgb(220, 220, 220);
   justify-content: space-around;
 	border: 1px solid #fff;
 	font-size: 15px;
+	transition: background 1s;
+
+
+		&:hover {
+			background: $list_background;
+			cursor: pointer;
+		}
+
+
+	h2{
+		padding: 14px 10px;
+		text-align: center;
+		vertical-align: middle;
+		width: 25%;
+	}
 
 	.icon{
 		padding-top: 11px;
 		font: normal normal normal 20px FontAwesome;
 	}
-}
-
-.first{
-	color: #484747 ;
-}
-
-.other{
-	color: gray;
-}
-
-.succ_date h2{
-	padding: 14px 10px;
-	display: flex;
-	vertical-align: middle;
-	width: 25%;
 }
