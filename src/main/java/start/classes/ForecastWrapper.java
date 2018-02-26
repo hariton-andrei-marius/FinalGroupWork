@@ -16,6 +16,11 @@ public class ForecastWrapper {
 	private String [] iconeDefinitive;
 	private String [] arrayGiorni;
 	
+	public ForecastWrapper() {
+		mediaMin = new LinkedList<Double>();
+		mediaMax = new LinkedList<Double>();
+	}
+	
 	public void setLista (Lista [] list) {
 		
 		this.list = list;
@@ -85,11 +90,18 @@ public class ForecastWrapper {
 		}
 	}
 	
+	public void setMediaMin(LinkedList<Double> mediaMin) {
+		this.mediaMin = mediaMin;
+	}
+	
+	public void setMediaMax(LinkedList<Double> mediaMax) {
+		this.mediaMax = mediaMax;
+	}
+	
 	public void trovaTemp() {
 		
 		Iterator<LinkedList> iterator = listaGiorni.iterator();
-		mediaMin = new LinkedList<Double>();
-		mediaMax = new LinkedList<Double>();
+
 		
 		while(iterator.hasNext()) {
 			
