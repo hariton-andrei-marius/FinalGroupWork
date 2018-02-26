@@ -21,6 +21,11 @@
 
 	border: 1px solid #FFF;
 	font-size: 15px;
+
+	.icon{
+		padding-top: 11px;
+		font: normal normal normal 20px FontAwesome;
+	}
 }
 
 .first {
@@ -35,4 +40,5 @@
 	padding: 14px 10px;
 	display: flex;
 	vertical-align: middle;
+	width: 25%;
 }

@@ -12,18 +12,8 @@ var forecastScript = (function () {
     $imageCitys = $(".city");
     id = $(".ul").attr("data-id");
     $ul = $('.ul');
-    $li = $('<li class="succ_date"> <h2 class="data"> </h2><i class="material-icons" th:data-icons-1=""></i> <h2 class="temperatura"> </h2> </li>');
+    $li = $('<li class="succ_date"> <h2 class="data"> </h2><i class="icon" > </i> <h2 class="temperatura"> </h2> </li>');
   };
-
-  // var _getData = function(data){
-  //   var dataCorrente = "null";
-  //   for(var i = 1, cont = 1 ; i <= 5 ; i++ , cont+=7){
-  //     while(dataCorrente != data.list[cont].dt_txt.substring(0,11)){
-  //       dataCorrente = data.list[cont].dt_txt.substring(0,11);
-  //     }
-  //     $(".giorno"+i+"").text(dataCorrente);
-  //     }
-  //   }
 
   var aggiungiGiorno= function(data, i){
     var $cloneLi = $li.clone();
@@ -42,7 +32,19 @@ var forecastScript = (function () {
 
   }
 
+  var inserisciIcone = function(data){
+    var icona = data.iconeDefinitive;
+    for(var i = 0; i < icona.length; i++){
+      $('.giorno' + i + '').find(".icon").addClass("icon-"+ icona[i]+ "");
+    }
+  }
 
+  var inserisciData = function(data){
+    var giorno = data.arrayGiorni;
+    for(var i = 0; i < giorno.length; i++){
+      $('.giorno' + i + '').find(".data").text(giorno[i]);
+    }
+  }
 
    /* PRIVATE BUSINESS FUNCTIONS */
    var _getItemData = function() {
@@ -56,6 +58,8 @@ var forecastScript = (function () {
        cache: false,
        success: function(data) {
         inserisciTemp(data);
+        inserisciIcone(data);
+        inserisciData(data);
        }
      });
    }

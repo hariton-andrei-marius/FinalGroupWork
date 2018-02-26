@@ -62,6 +62,10 @@
 	margin: 10px 0 10px 0;
 }
 
+.iconPric {
+	font: normal normal normal 100px FontAwesome;
+}
+
 /*
 
 sole: 01d 												content: "\f185";
@@ -79,51 +83,43 @@ mist: 50d													content: "\f1be";
 // TOP ICONS
 
 .icon-01d:before , .icon-01n:before  {
-	font: normal normal normal 100px FontAwesome;
 	content: "\f185";
 }
 
 .icon-02d:before ,.icon-02n:before  {
-	font: normal normal normal 100px FontAwesome;
 	content: "\f0c2";
 }
 
 .icon-03d:before , .icon-03n:before   {
-	font: normal normal normal 100px FontAwesome;
 	content: "\f0c2";
 }
 
 .icon-04d:before , .icon-04n:before  {
-	font: normal normal normal 100px FontAwesome;
 	content: "\f0c2";
 }
 
 .icon-09n , .icon-09d {
 	&:before  {
-		font: normal normal normal 100px FontAwesome;
 		content: "\f043";
 	}
 }
 
-.icon-10n , .icon-01d {
+.icon-10n , .icon-10d {
 	&:after  {
-		font: normal normal normal 100px FontAwesome;
 		content: "\f043";
 	}
 }
 
 .icon-11d:before, .icon-11n:before  {
-	font: normal normal normal 100px FontAwesome;
 	content: "\f0e7";
 }
 
+
 .icon-13d:before ,.icon-13n:before  {
-	font: normal normal normal 100px FontAwesome;
 	content: "\f2dc";
 }
 
 .icon-50d:before , .icon-50n:before {
-	font: normal normal normal 100px FontAwesome;
 	content: "\f1be";
 }
 
