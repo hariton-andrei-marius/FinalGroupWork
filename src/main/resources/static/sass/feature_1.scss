@@ -1,12 +1,12 @@
-.container{
-	width: 100%;
-	text-align: center;
-	position: absolute;
-	z-index: 0;
-	color: #fff;
+.container {
 	display: flex;
 	flex-direction: column;
-	margin-top: 50px;
+	position: absolute;
+
+	z-index: 0;
+	width: 100%;
+	text-align: center;
+	color: #FFF;
 
 	.position {
 		margin-bottom: 20px;
@@ -21,37 +21,39 @@
 	}
 }
 
-/* IMAGE WITH OVERLAY */
+// IMAGE WITH OVERLAY
 
 .imageContainer {
 	position: relative;
 	width: 100%;
 }
 
-.imageCity{
+.imageCity {
 	position: relative;
 	width: 100%;
 	height: 70vh;
 	z-index: -2;
+
 	object-fit: cover;
 }
 
 .imageOverlay {
-	background: rgba(0, 0, 0, 0.2);
-	width: 100%;
-	height: 99.7%;
 	position: absolute;
 	top: 0;
 	left: 0;
 	z-index: -1;
+	width: 100%;
+	height: 99.7%;
+
+	background: rgba(0, 0, 0, 0.2);
 }
 
-.city{
-	font-size: 50px;
+.city {
 	margin-top: 10px;
+	font-size: 50px;
 }
 
-.temp{
+.temp {
 	font-size: 70px;
 }
 
@@ -62,19 +64,20 @@
 
 /*
 
-sole: 01d 											content: "\f185";
-sole-nuvola: 02d 								content: "\f0c2"; chiaro
-nuvola: 03d 										content: "\f0c2"; chiaro
-nuvole-scure: 04d								content: "\f0c2"; scuro
-nuvole-con-pioggia:  09d				content: "\f043"; +++ 		content: "\f0c2";
+sole: 01d 												content: "\f185";
+sole-nuvola: 02d 									content: "\f0c2"; chiaro
+nuvola: 03d 											content: "\f0c2"; chiaro
+nuvole-scure: 04d									content: "\f0c2"; scuro
+nuvole-con-pioggia:  09d					content: "\f043"; +++ 		content: "\f0c2";
 nuvole-con-sole-con-pioggia: 10d	content: "\f185"; +++		content: "\f043";
-nuvole-fulmini: 11d							content: "\f0e7";
-neve: 13d												content: "\f2dc";
-mist: 50d												content: "\f1be";
+nuvole-fulmini: 11d								content: "\f0e7";
+neve: 13d													content: "\f2dc";
+mist: 50d													content: "\f1be";
 
 */
 
 // TOP ICONS
+
 .icon-01d:before , .icon-01n:before  {
 	font: normal normal normal 100px FontAwesome;
 	content: "\f185";
@@ -122,6 +125,14 @@ mist: 50d												content: "\f1be";
 .icon-50d:before , .icon-50n:before {
 	font: normal normal normal 100px FontAwesome;
 	content: "\f1be";
+}
+
+// MEDIA QUERIES
+
+@media screen and (min-width: 375px) {
+  .block1 {
+    display: flex;
+  }
 }
 
 @media screen and (min-width: 768px) {

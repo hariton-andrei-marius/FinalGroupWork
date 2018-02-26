@@ -1,54 +1,18 @@
-/*
-* THIS IS AN
-* EXAMPLE CODE !
-*/
+/* IMPORTS */
 
-/* IMPORT */
-/*
 @import 'variables';
-@import 'mixins';
 @import 'shared';
-*/
-/*
-body {
-	font: 100% $font-stack;
-	color: $primary-color;
-}*/
- 
+
 @import 'feature_1';
 @import 'feature_2';
 @import 'feature_3';
 
-body{
-	font-family: 'Montserrat', sans-serif;
+body {
+	font-family: $font-stack;
 	letter-spacing: 2px;
 	font-weight: 500;
 }
 
-.material-icons{
+.material-icons {
 	padding: 10px 10px;
 }
-
-@media screen and (min-width: 375px){
-  .block1 {
-    display: flex;
-  }
-}
-
-/* MIXINS */
-/*
-.box {
-	@include border-radius(10px);
-}*/
-
-/* EXTEND/INHERITANCE */
-/*
-.success {
-	@extend %message-shared;
-}*/
-
-/* OPERATORS */
-/*
-aside[role='complementary'] {
-	width: 300px / 960px * 100%;
-}*/

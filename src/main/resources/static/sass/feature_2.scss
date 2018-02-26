@@ -1,7 +1,5 @@
-$list_background: rgb(220, 220, 220);
-
-.block2{
-	background-color: #fafafa;
+.block2 {
+	background-color: #FAFAFA;
 	margin-bottom: 79px;
 
 	ul {
@@ -9,29 +7,31 @@ $list_background: rgb(220, 220, 220);
 			transition: background 1s;
 
 			&:hover {
+				@extend %hover-custom-cursor;
+
 				background: $list_background;
-				cursor: pointer;
 			}
 		}
 	}
 }
 
-.succ_date{
-  display: flex;
-  justify-content: space-around;
-	border: 1px solid #fff;
+.succ_date {
+	display: flex;
+	justify-content: space-around;
+
+	border: 1px solid #FFF;
 	font-size: 15px;
 }
 
-.first{
-	color: #484747 ;
+.first {
+	color: #484747;
 }
 
-.other{
-	color: gray;
+.other {
+	color: $primary-color;
 }
 
-.succ_date h2{
+.succ_date h2 {
 	padding: 14px 10px;
 	display: flex;
 	vertical-align: middle;
