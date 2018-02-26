@@ -35,7 +35,7 @@ public class ForecastRestController {
 			wrapper.setLista(results.getList());
 			wrapper.getGiorno();
 			wrapper.trovaTemp();
-//			wrapper.cercaIcona();
+			wrapper.cercaIcona();
 		}
 		catch (RestClientException | URISyntaxException e)
 		{

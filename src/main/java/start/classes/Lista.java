@@ -10,7 +10,7 @@ public class Lista {
 		return main;
 	}
 	
-	public ForecastWeather[] getWeatherForecast() {
+	public ForecastWeather[] getWeather() {
 		return weather;
 	}
 	
