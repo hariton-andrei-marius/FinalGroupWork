@@ -26,6 +26,15 @@
 		padding-top: 11px;
 		font: normal normal normal 20px FontAwesome;
 	}
+
+	h2 {
+		padding: 14px 10px;
+		width: 25%;
+	}
+
+	.temperatura {
+		text-align: right;
+	}
 }
 
 .first {
@@ -34,11 +43,4 @@
 
 .other {
 	color: $primary-color;
-}
-
-.succ_date h2 {
-	padding: 14px 10px;
-	display: flex;
-	vertical-align: middle;
-	width: 25%;
 }

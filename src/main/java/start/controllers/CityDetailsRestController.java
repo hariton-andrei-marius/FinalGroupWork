@@ -17,18 +17,11 @@ public class CityDetailsRestController {
 	@RequestMapping("/rest/city_details")
 	public Object cityDetails(Model model,
 
-		@RequestParam(value = "city", required = false) String city)
+		@RequestParam(value = "city", required = false) String city) throws RestClientException, URISyntaxException
 	{
 		Object results = null;
 		
-		try
-		{
-			results = new RestTemplate().getForObject(RestApi.getCityDetailsURI(city), Object.class);
-		}
-		catch (RestClientException | URISyntaxException e)
-		{
-			results = e.getMessage();
-		}
+		results = new RestTemplate().getForObject(RestApi.getCityDetailsURI(city), Object.class);
     	
 		return results;
 	}

@@ -28,21 +28,15 @@ public class ForecastRestController {
 
 		Forecast results = null;
 		ForecastWrapper wrapper= null;
-		try
-		{
-			results = new RestTemplate().getForObject(RestApi.getForecastURIbyID(id, language), Forecast.class);
-			wrapper = new ForecastWrapper();
-			wrapper.setLista(results.getList());
-			wrapper.getGiorno();
-			wrapper.trovaTemp();
-			wrapper.cercaIcona();
-			wrapper.salvaIcona();
-			wrapper.setData();
-		}
-		catch (RestClientException | URISyntaxException e)
-		{
-			e.printStackTrace();
-		}
+
+		results = new RestTemplate().getForObject(RestApi.getForecastURIbyID(id, language), Forecast.class);
+		wrapper = new ForecastWrapper();
+		wrapper.setLista(results.getList());
+		wrapper.getGiorno();
+		wrapper.trovaTemp();
+		wrapper.cercaIcona();
+		wrapper.salvaIcona();
+		wrapper.setData();
 
 		return wrapper;
 	}

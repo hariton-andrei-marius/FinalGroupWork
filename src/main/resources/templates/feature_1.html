@@ -1,15 +1,18 @@
 <section class="block1">
+
 	<article class="container">
 		<h2 class="position">
 			<span class="material-icons gps">gps_fixed</span>
 			<span class="place" th:text="${position.city} + ', ' + ${position.region_name} + ', ' + ${position.country_name}"></span>
 		</h2>
+		
 		<i th:attr="class='iconPric icon-'+${weather.weather[0].icon}"></i>
 		<h1 th:text="${weather.name}" class="city"></h1>
 		<h2 th:text="${weather.weather[0].description}" class="description"></h2>
 		<h2 th:text="${day} + ' ' + ${month}"></h2>
 		<h1 th:text="${weather.main.temp}+'°'" class="temp"></h1>
 	</article>
+	
 	<section class="imageContainer">
 		<img class= "imageCity" src="images/default_background.svg" />
 		<article class="imageOverlay"></article>

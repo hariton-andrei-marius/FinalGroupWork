@@ -17,7 +17,7 @@ public class Utils
 		URL whatismyip = new URL(RestApi.getExternalIPuri().toString());
 		
 		BufferedReader in = new BufferedReader(
-					new InputStreamReader(whatismyip.openStream())
+			new InputStreamReader(whatismyip.openStream())
 		);
 
 		String ip = in.readLine();

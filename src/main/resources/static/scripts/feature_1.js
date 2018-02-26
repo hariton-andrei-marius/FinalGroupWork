@@ -1,7 +1,8 @@
 const retrieveImage = (function() {
 
 	/* DECLARING VARIABLES */
-	var $citySearched, $imageCity, $imageWeb, $imageMobile, $window;
+	var $citySearched, $imageCity, $imageWeb,
+		$imageMobile, $window;
 
 	const RESTURL = "/rest/images";
 
@@ -29,7 +30,8 @@ const retrieveImage = (function() {
 		if ($window.width() < 1000) {
 
 			$imageCity.attr("src", $imageMobile);
-		} else {
+		}
+		else {
 
 			$imageCity.attr("src", $imageWeb);
 		}
@@ -66,10 +68,12 @@ const retrieveImage = (function() {
 	;
 
 	function _init() {
+		
 		try {
 			_setup();
 			_setObserver();
-		} catch (e) {
+		}
+		catch (e) {
 			console.log('%c ' + e.message, 'color:red');
 			console.log('%c ' + e.stack, 'background: #222; color: #bada55');
 		}

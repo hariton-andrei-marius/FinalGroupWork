@@ -90,9 +90,7 @@ const getInput = (function() {
 		
 		$input.on("keypress", function() {
 			
-			// If there are more that 2 characters
-			if($input.val().length > 2)
-				_controlloCaratteri();
+			_controlloCaratteri();
 		});
 
 		$idForm.on('keypress', function(e) {
